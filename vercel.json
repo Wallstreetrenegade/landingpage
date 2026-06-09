@@ -1,0 +1,11 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/optin.html" },
+    { "source": "/thank-you", "destination": "/thank-you.html" },
+    { "source": "/apply", "destination": "/apply.html" },
+    { "source": "/apply/thank-you", "destination": "/apply-thank-you.html" },
+    { "source": "/apply/booked", "destination": "/apply-booked.html" }
+  ]
+}
