@@ -1,33 +1,45 @@
-# Dr. Lead Flow — AI CEO Lab Funnel Pages
+# PERGA Product + Opportunity Funnel
 
-Live at: **aiceo.doctorleadflow.com**
+A two-page awareness funnel for PERGA's Core 4 wellness system and Legacy Partner opportunity.
 
-## Pages
+## Visitor journey
 
-| File | Route | Description |
-|------|-------|-------------|
-| `optin.html` | `/` | Webinar opt-in — main landing page |
-| `thank-you.html` | `/thank-you` | Webinar thank you — add to calendar |
-| `apply.html` | `/apply` | Application funnel — VSL + form modal |
-| `apply-thank-you.html` | `/apply/thank-you` | Post-application — GHL calendar booking |
-| `apply-booked.html` | `/apply/booked` | Post-booking — offers (Skool, GHL, Viktor) |
+1. `optin.html` (`/`) — product/opportunity overview and registration modal.
+2. `thank-you.html` (`/thank-you`) — personalized presentation page, supplied video, next steps and share link.
 
-## Funnels
+Vercel's clean URL rules live in `vercel.json`. The form currently stores the submitted values in browser session storage and advances to the presentation. Connect it to the selected CRM/webhook before launch.
 
-**Webinar:** `/` → `/thank-you`  
-**Application:** `/apply` → `/apply/thank-you` → `/apply/booked`
+## Preview locally
 
-## Brand
-- Dark bg: `#1A1210` | Oxblood: `#7A1E2E`
-- Fonts: Playfair Display + DM Sans
-- All CSS tokens in `:root` of each file
-
-## Deploy
-Deployed via Vercel. Push to `main` to update.
-
-```bash
-vercel --prod
+```powershell
+python -m http.server 8000 --bind 127.0.0.1
 ```
 
-## Diagrams
-`diagrams/dlf-funnel-map.excalidraw` — open in Cursor/VS Code or drag to excalidraw.com
+Open `http://localhost:8000/optin.html`.
+
+## Brand system
+
+- Deep navy: `#00151f`
+- PERGA navy: `#003344`
+- Aqua: `#68cbd0`
+- Cream: `#f5f2eb`
+- Type: Manrope + DM Sans
+
+All production assets are in `assets/`. Source reference documents are retained in `pdf-docs-images/`.
+
+## Before production launch
+
+- Connect the registration form to the chosen CRM/email workflow.
+- Confirm final presentation video and hosting strategy.
+- Add analytics and advertising pixels.
+- Confirm the final legal/privacy URLs and compliance copy with PERGA.
+- Replace the general follow-up instruction with the inviter's desired CTA or calendar flow.
+- Run final performance and cross-browser QA after assets are locked.
+
+## Deployment
+
+This remains a static Vercel project:
+
+```powershell
+vercel --prod
+```

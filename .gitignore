@@ -1,0 +1,9 @@
+# Internal source/reference materials; not part of the public site
+pdf-docs-images/
+
+# Local tooling and environment files
+.env
+.env.*
+.vercel/
+node_modules/
+*.log
