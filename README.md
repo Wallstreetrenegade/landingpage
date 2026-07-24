@@ -12,10 +12,10 @@ Vercel's clean URL rules live in `vercel.json`. The landing-page opt-in submits 
 ## Preview locally
 
 ```powershell
-python -m http.server 8000 --bind 127.0.0.1
+node server.js
 ```
 
-Open `http://localhost:8000/optin.html`.
+Open `http://localhost:8000`. This server runs both the pages and the PERGA opt-in API; a static-only preview server cannot process submissions.
 
 ## Brand system
 
@@ -38,7 +38,7 @@ All production assets are in `assets/`. Source reference documents are retained 
 
 ## Deployment
 
-This remains a static Vercel project:
+This is a Vercel project with a serverless opt-in endpoint:
 
 ```powershell
 vercel --prod
