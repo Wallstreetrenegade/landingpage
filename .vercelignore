@@ -1,0 +1,8 @@
+.git/
+.vercel/
+pdf-docs-images/
+node_modules/
+.env
+.env.*
+*.log
+server.js
