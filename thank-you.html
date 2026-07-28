@@ -45,7 +45,7 @@
         <div class="step"><span class="num">2</span><div><b>Decide what your future could look like</b><small>Ask whether building something meaningful, flexible and potentially rewarding fits your goals.</small></div></div>
         <div class="step"><span class="num">3</span><div><b>Take the next step while the window is open</b><small>Reconnect with your inviter, ask the hard questions and make an informed decision.</small></div></div>
       </div>
-      <div class="actions"><a class="btn btn-primary" href="https://pergainc.com/joshuaboyd" target="_blank" rel="noopener">Start Your PERGA Journey →</a></div>
+      <div class="actions"><a class="btn btn-primary" href="https://pergainc.com/primepath" target="_blank" rel="noopener">Start Your PERGA Journey →</a></div>
     </div>
   </div></section>
 
@@ -56,7 +56,7 @@
   <script>
     const reserveForm=document.getElementById('reserve-form'),reserveSubmit=document.getElementById('reserve-submit'),reserveStatus=document.getElementById('reserve-status'),signupNext=document.getElementById('signup-next');
     reserveForm.addEventListener('submit',async event=>{event.preventDefault();reserveStatus.className='reserve-status';reserveSubmit.disabled=true;reserveSubmit.textContent='Securing…';try{const response=await fetch('/api/perga-optin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(reserveForm)))});const text=await response.text();let result={};try{result=JSON.parse(text)}catch{throw new Error('Registration is temporarily unavailable. Please try again.')}if(!response.ok||!result.status)throw new Error(result.message||'We could not complete your registration.');localStorage.setItem('perga_lead_submitted','1');reserveForm.reset();reserveForm.style.display='none';document.getElementById('reserve-privacy').style.display='none';signupNext.classList.add('show')}catch(error){reserveStatus.textContent=error.message||'Something went wrong. Please try again.';reserveStatus.className='reserve-status error';reserveSubmit.disabled=false;reserveSubmit.textContent='Secure My Spot →'}});
-    document.getElementById('continue-signup').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('Howdy')}catch{}window.location.href='https://pergainc.com/en-us/joshuaboyd/pages/benefits'});
+    document.getElementById('continue-signup').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('Howdy')}catch{}window.location.href='https://pergainc.com/primepath'});
     const liveModal=document.getElementById('live-modal'),liveForm=document.getElementById('live-form'),liveAlready=document.getElementById('live-already'),liveStatus=document.getElementById('live-status'),liveSubmit=document.getElementById('live-submit');
     function openLiveModal(){const submitted=localStorage.getItem('perga_lead_submitted')==='1';liveForm.style.display=submitted?'none':'grid';liveAlready.classList.toggle('show',submitted);liveStatus.className='live-status';liveModal.classList.add('open');document.body.style.overflow='hidden';if(!submitted)setTimeout(()=>liveForm.elements.full_name.focus(),50)}
     function closeLiveModal(){liveModal.classList.remove('open');document.body.style.overflow=''}
