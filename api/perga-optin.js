@@ -1,4 +1,4 @@
-const OVERVIEW_URL = 'https://pergainc.com/joshuaboyd/pages/overview';
+const OVERVIEW_URL = 'https://pergainc.com/primepath/pages/overview';
 const LEAD_URL = 'https://pergainc.com/save-overview-lead';
 
 function setCookies(response, jar) {
@@ -38,7 +38,7 @@ module.exports = async function handler(req, res) {
     const token = html.match(/name="csrf-token"\s+content="([^"]+)"/)?.[1] || html.match(/name="_token"\s+value="([^"]+)"/)?.[1];
     if (!token) throw new Error('Unable to establish a secure PERGA session.');
 
-    const form = new URLSearchParams({ _token: token, full_name: fullName, email, phone, instagram, pillar_customer_id: '2394', referred_by: 'joshuaboyd' });
+    const form = new URLSearchParams({ _token: token, full_name: fullName, email, phone, instagram, pillar_customer_id: '2750', referred_by: 'primepath' });
     const upstream = await fetch(LEAD_URL, {
       method: 'POST',
       redirect: 'manual',

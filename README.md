@@ -7,7 +7,7 @@ A two-page awareness funnel for PERGA's Core 4 wellness system and Legacy Partne
 1. `optin.html` (`/`) — product/opportunity overview and registration modal.
 2. `thank-you.html` (`/thank-you`) — personalized presentation page, supplied video, next steps and share link.
 
-Vercel's clean URL rules live in `vercel.json`. The landing-page opt-in submits through `/api/perga-optin`, which establishes a valid PERGA session and sends the lead to PERGA's official `save-overview-lead` endpoint with `pillar_customer_id=2394` and `referred_by=joshuaboyd`. After PERGA confirms the record, the visitor advances to our `/thank-you` webinar page.
+Vercel's clean URL rules live in `vercel.json`. The landing-page opt-in submits through `/api/perga-optin`, which establishes a valid PERGA session and sends the lead to PERGA's official `save-overview-lead` endpoint with `pillar_customer_id=2750` and `referred_by=primepath`. After PERGA confirms the record, the visitor advances to our `/thank-you` webinar page.
 
 ## Preview locally
 
